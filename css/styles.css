@@ -1,0 +1,94 @@
+body{
+    font-size: 15px;
+    font-family: "Comic Sans";
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+}
+.wrapper{
+    width: 700px;
+    //border: 1px solid black;
+    margin: 0 auto;
+    height: 600px;
+    /*border: 1px solid black;*/
+}
+select{
+    border: 1px solid black;
+    outline: none;
+    font-size: 15px;
+    font-family: "Comic Sans" ;
+
+}
+select#period {
+    width: 100px;
+}
+select#stream {
+    width: 130px;
+}
+select#years {
+    width: 100px;
+}
+#fileUploaded {
+    margin-top: 10px;
+}
+.error{
+    color: red;
+}
+.test{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 300px;
+}
+.test tr:nth-child(2n) {
+    background-color: #f5f5f0;
+}
+.test tr th{
+    text-align: left;
+}
+.test th, td {
+    padding: 5px;
+}
+ul{
+    list-style: none;
+}
+.loginInfo {
+    margin: 0px;
+    height: 100px;
+    width: 100%;
+    float: right;
+    border: none;
+    text-align: right;
+    border-bottom: 4px solid black;
+    margin-bottom: 20px;
+}
+.loginInfo a{
+    line-height: 30px;
+    padding-right: 10px;
+}
+div .mainmenu {
+    position: relative;
+    top: 70px;
+    height: 30px;
+    width: 100%;
+    /*background-color: lightgray;*/
+    /*border: 1px solid black;*/
+}
+.mainmenu ul{
+    margin: 0px;
+    position: absolute;
+    height: 30px;
+    /*border: 1px solid black;*/
+    padding-left: 0px;
+    
+}
+.mainmenu ul li{
+    float: left;
+    width: 110px;
+    line-height: 30px;
+}
+.long{
+    
+}

@@ -1,0 +1,4 @@
+$mysql_host = "mysql17.000webhost.com";
+$mysql_database = "a1527694_smis";
+$mysql_user = "a1527694_smis";
+$mysql_password = "0404test";

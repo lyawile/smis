@@ -1,0 +1,27 @@
+***************** PLEASE OPEN ME IN NETBEANS IDE **********************************
+Within the same form through which a customer details are added,
+pick a room from the option box that is populated from the available rooms in the database i.e system should not display rooms that are already occupied
+click register button to give customer a room and store all details i.e his particulars, room.
+
+Things you should care about:
+If a room was taken, you may add a column named taken which stores either 1 or 0, if 1 a room is held by a customer else it is available for a new customer.
+If a room was taken, you should read a range of dates in order to free it if time expires.
+
+STEPS: 
+add a new option box in the form at order.php file
+<p>Rooms</p>
+<select>
+<option>Room 1 Floor: first</option> <!-- This data should be read from the database -->
+</select>
+Write a query to read the rooms available, it should read from the ordertb and rooms table as shown:
+select `roomNumber`,floor from room r, ordertb o 
+where r.id != o.`roomId`; 
+execute the query.
+To view the rooms available you should loop the variable containing the function mysqli_fetch_array() // read this function from w3schools.com.
+Display the rooms using that loop in option box you added above.
+It continues after you finish above part first.
+
+-----------------WISH YOU A GREAT LEARNING ----------------------------
+                    06/10/2015
+
+Telephone: 255-27-2541034 or 2541036

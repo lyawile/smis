@@ -1,0 +1,38 @@
+body{
+        background-color: rgba(0,0,0,0.1);
+        font-size: 17px;
+
+}
+.loginIcon {
+    width: 150px;
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+}
+.loginForm {
+    position: relative;
+    top: 35px;
+    width: 350px;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 3px;
+    background-color: white;
+}
+.loginForm input[type="text"],.loginForm input[type="password"] {
+    width: 300px;
+    outline: none;
+}
+.loginForm input[type="submit"]{
+    width: 100px;
+}
+.loginForm input{
+    height: 30px;
+}
+.loginForm form{
+    padding: 20px 20px;
+}
+input {
+    font-size: 17px;
+}
+
+

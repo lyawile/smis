@@ -1,0 +1,12 @@
+ JUMA,  Hassan with registration number 200 exists 
+ JUMA,  Hassan with registration number 200 exists 
+ JUMA,  Hassan with registration number 200 exists 
+ JUMA,  Hassan with registration number 200 exists 
+ JUMA,  Hassan with registration number 200 exists 
+ JUMA,  Hassan with registration number 200 exists 
+ JUMA,  Hassan with registration number 200 exists 
+ SABURI,  Rashid with registration number 201 exists 
+KANJI, Salum with registration number 202 exists 
+ JUMA,  Hassan with registration number 200 exists 
+ SABURI,  Rashid with registration number 201 exists 
+KANJI, Salum with registration number 202 exists 
