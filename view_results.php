@@ -99,7 +99,7 @@ if (isset($_POST['subject'])) {
                 <input type="submit"  value="submit" id="send" >
             </form>
             <span></span>
-            <table>
+<!--            <table class="results">
                 <tr>
                     <th>Reg. Number</th>
                     <th>First Name</th>
@@ -142,7 +142,7 @@ if (isset($_POST['subject'])) {
                     <td>Saidi</td>
                     <td><a href="">View Results</a></td>
                 </tr>
-            </table>
+            </table>-->
         </div>
     </body>
 </html>
