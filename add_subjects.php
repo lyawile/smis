@@ -19,9 +19,8 @@ if (isset($_POST['subject'])) {
             mysqli_query($link, $query4);
         }
     }
-}
- else {
-    $error =  'select atlest one subject before submitting a form';
+} else {
+    $error = 'select atlest one subject before submitting a form';
 }
 
 $query = "select * from subject";
@@ -50,8 +49,8 @@ $result1 = mysqli_query($link, $query1);
                             $('p:last').html(data);
                         },
                         beforeSend: function (xhr) {
-                        $('p:last').html("Loading...");
-                    }
+                            $('p:last').html("Loading...");
+                        }
                     });
 
                 });
@@ -66,21 +65,21 @@ $result1 = mysqli_query($link, $query1);
         <div class="wrapper">
             <?php include_once './includes/banner.php'; ?>
             <p>Select a student to view subjects registered</p>
-            <p><?php if(isset($error))  echo $error; ?></p>
-            
+            <p><?php if (isset($error)) echo $error; ?></p>
+
             <form method="POST">
                 <select style="display: block" id="myselect" name="selector">
-<?php while ($data = mysqli_fetch_array($result1)) { ?>
+                    <?php while ($data = mysqli_fetch_array($result1)) { ?>
                         <option value="<?php echo $data['id']; ?>"><?php echo $data['firstname'] . ' ' . $data['surname'] ?></option>
                     <?php } ?>
                 </select>
                 <!--read subjects from the database based on class selected-->
-<?php while ($data = mysqli_fetch_array($result)) { ?>
+                <?php while ($data = mysqli_fetch_array($result)) { ?>
                     <input type="checkbox" name="subject[]" value="<?php echo $data['subjectName']; ?>" >
                     <label><?php echo $data['subjectName']; ?></label><br/>
-<?php } ?>
+                <?php } ?>
                 <input type="submit"  value="submit" >
-                
+
             </form>
             <p></p>
         </div>
