@@ -6,9 +6,6 @@ $result = mysqli_query($link, $query1);
 include_once './config/login.php';
 if (isset($_SESSION['loggedIn'])) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (file_exists('errors111.txt')) {
-            unlink('errors111.txt');
-        }
         if (!$link) {
             echo 'database not connected';
         }
@@ -22,7 +19,7 @@ if (isset($_SESSION['loggedIn'])) {
                     $streamId = $data[7];
                     $marks = $data[9];
                     $subjectID = $data[8];
-                    $query = "select studId,examId,examYear ,streamId from score where `studId` = '$studentID' and examId = '$examId' and `examYear` = '$examYear' and streamId = '$streamId';";
+                    $query = "select studId,examId,examYear ,streamId from score where `studId` = '$studentID' and examId = '$examId' and `examYear` = '$examYear' and streamId = '$streamId' and subjectID = '$subjectID';";
                     $result = mysqli_query($link, $query); 
                     if (mysqli_num_rows($result) === 1) {
                         echo 'record exist';

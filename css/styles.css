@@ -9,8 +9,7 @@ a:hover{
     color: orange;
 }
 .wrapper{
-    width: 700px;
-    //border: 1px solid black;
+    width:700px;
     margin: 0 auto;
     height: 600px;
     /*border: 1px solid black;*/
@@ -92,3 +91,4 @@ div .mainmenu {
 .long{
     
 }
+

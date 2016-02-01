@@ -1,0 +1,19 @@
+This app is a simple but yet useful made to allow the school management monitor its information like 
+students records and staff records. 
+This app has the following modules:
+    - Student academic records
+    - Student payment records
+    - Staff records like their CVs, and associated docs like certificates and testimonials 
+    - Staff payment subsystem 
+    -Time table management subsystem 
+
+A: STUDENT ACADEMIC RECORDS 
+-This module is comprised of the following functionalities:
+    * Upload the students details using the CSV file with the following format:
+        -registration number, firstname, middlename, surname 
+        -in the app other options year, stream, file browser are selected during upload 
+    * Assign subjects to students 
+    -There are two ways of adding subjects to students, one by batch and the other by individual students
+    -The first method assigns all selected subjeects to all students in a given stream or class. 
+    -The later one assigns selected subjects to a selected candidate only 
+    * 

@@ -51,8 +51,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <span style="display: block; color: red;"><?php if(isset($loginError)) echo $loginError; ?></span>
             </form>
         </div>
-
-
-
     </body>
 </html>

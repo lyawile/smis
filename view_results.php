@@ -1,5 +1,4 @@
 <?php
-
 require './config/dbcon.php';
 include_once './config/login.php';
 $query = "select id,`streamName` from stream;";
@@ -42,20 +41,24 @@ if (isset($_POST['subject'])) {
         <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
-                $('#send').click(function () {
-                    var data = $('#results-form').serialize();
-                    alert(data);
-//                    $.ajax({
-//                        url: "displaysubjects.php",
-//                        data: $('#results-form').serialize(),
-//                        //dataType: 'json',
-//                        success: function (data, textStatus, jqXHR) {
-//                            $('p:last').html(data);
-//                        },
-//                        beforeSend: function (xhr) {
-//                            $('p:last').html("Loading...");
-//                        }
-//                    });
+                $('#send').click(function (event) {
+                    event.preventDefault();
+                    var streamId = $('#streamId').val();
+                    var examYear = $('#examYear').val();
+                    var examId = $('#examId').val();
+                    $.ajax({
+                        url: "loading_students_with_results.php",
+                        data: {streamId: streamId,
+                            examYear: examYear,
+                            examId: examId
+                        },
+                        success: function (data, textStatus, jqXHR) {
+                            $('span:last').html(data);
+                        },
+                        beforeSend: function (xhr) {
+                            $('span:last').html("Loading...");
+                        }
+                    });
 
                 });
 
@@ -72,32 +75,74 @@ if (isset($_POST['subject'])) {
     </head>
     <body>
         <div class="wrapper">
-<?php include_once './includes/banner.php'; ?>
-
+            <?php include_once './includes/banner.php'; ?>
             <form method="POST" id="results-form">
                 <span style="">Select Stream</span>
-                <select style="" id="myselect" name="streamId">
-<?php while ($data = mysqli_fetch_array($result1)) { ?>
+                <select style="" id="streamId" name="streamId">
+                    <?php while ($data = mysqli_fetch_array($result1)) { ?>
                         <option value="<?php echo $data['id']; ?>"><?php echo $data['streamName']; ?></option>
                     <?php } ?>
                 </select>
                 <span style="">Year</span>
-                <select style="" id="myselect" name="examYear">
+                <select style="" id="examYear" name="examYear">
+                    <option value="2013">2013</option>
                     <option value="2014">2014</option>
-                    <option value="2014">2014</option>
-                    <option value="2014">2014</option>
-                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
                 </select>
                 <span style="">Exam Period</span>
-                <select style="" id="myselect" name="examPeriod">
-                    <?php while($data = mysqli_fetch_array($result2)){ ?>
-                    <option value="<?php echo $data['id']; ?>"><?php echo $data['name']; ?></option>';
+                <select style="" id="examId" name="examPeriod">
+                    <?php while ($data = mysqli_fetch_array($result2)) { ?>
+                        <option value="<?php echo $data['id']; ?>"><?php echo $data['name']; ?></option>';
                     <?php } ?>
                 </select>
                 <input type="submit"  value="submit" id="send" >
-
             </form>
-            <p></p>
+            <span></span>
+            <table>
+                <tr>
+                    <th>Reg. Number</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>001 </td>
+                    <td>Ally</td>
+                    <td>Saidi</td>
+                    <td><a href="">View Results</a></td>
+                </tr>
+                <tr>
+                    <td>001 </td>
+                    <td>Ally</td>
+                    <td>Saidi</td>
+                    <td><a href="">View Results</a></td>
+                </tr>
+                <tr>
+                    <td>001 </td>
+                    <td>Ally</td>
+                    <td>Saidi</td>
+                    <td><a href="">View Results</a></td>
+                </tr>
+                <tr>
+                    <td>001 </td>
+                    <td>Ally</td>
+                    <td>Saidi</td>
+                    <td><a href="">View Results</a></td>
+                </tr>
+                <tr>
+                    <td>001 </td>
+                    <td>Ally</td>
+                    <td>Saidi</td>
+                    <td><a href="">View Results</a></td>
+                </tr>
+                <tr>
+                    <td>001 </td>
+                    <td>Ally</td>
+                    <td>Saidi</td>
+                    <td><a href="">View Results</a></td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>

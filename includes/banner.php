@@ -6,5 +6,6 @@
         <li class="long"><a href="./export_subject_candidates.php">Export stream</a></li>  
         <li class="long"><a href="./upload_marks.php">Upload marks</a></li>  
         <li class="long"><a href="./view_results.php">View results</a></li>  
+        <li class="long"><a href="./subjects_to_entire_class.php">Batch Subjects</a></li>  
     </ul> 
 </div>
