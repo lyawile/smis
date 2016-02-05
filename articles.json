@@ -1,3 +1,75 @@
 {
-    "name": "Admin"
+    "articles" :[{
+        "name" : "Hassan Ally Lyawile",
+        "organization" : "NECTA"
+    },
+    {
+        "name" : "Daniel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Dacacwerfweweniel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Danicacawefwel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Danicacaefwfwl Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Danicacael Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Daniel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Danicacasel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Daniel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Danicacael Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Daniecascl Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Daniacascel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Danicascael Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Daniescasl Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Daniekkkl Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Dallniel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : "Danikel Magesa",
+        "organization": "Open University"
+    },
+    {
+        "name" : " Magesa",
+        "organization": "Dar T"
+    }
+    ] 
 }
