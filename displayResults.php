@@ -1,10 +1,10 @@
 <?php
-require_once './config/dbcon.php';
+require './config/dbcon.php';
 $studentId = $_GET['stdId'];
 $examId = $_GET['examId'];
 $examYear = $_GET['examYear'];
 $query = "select student.id 'studId', firstname,middlename,surname,subjectName, marks from score, student, subject where score.`studId` = student.id  and score.`subjectID` = subject.`subjectID` and score.`studId` = $studentId and score.`examId` = $examId and score.`examYear` = $examYear order by subjectName;";
-$query1 = "select student.id 'studId', firstname,middlename,surname,subjectName, marks from score, student, subject where score.`studId` = student.id  and score.`subjectID` = subject.`subjectID` and score.`studId` = $studentId and score.`examId` = $examId and score.`examYear` = $examYear;";
+$query1 = "select student.id 'studId',`examYear`, firstname,middlename,surname,subjectName, marks, examterm.muhula 'muhula', streamName from stream,examterm,score, student, subject where score.`studId` = student.id  and score.`subjectID` = subject.`subjectID` and score.`studId` = $studentId and score.`examId` = $examId and score.`examYear` = $examYear and examId = examterm.id and streamId = stream.id;";
 $result = mysqli_query($link, $query);
 $result1 = mysqli_query($link, $query1);
 ?>
@@ -14,16 +14,22 @@ $result1 = mysqli_query($link, $query1);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-    <div style="background-color: #f5f5f0; margin-left: 10px;padding-left: 5px; height: 40px;line-height: 40px;font-size: 20px;"><?php
+    <div class="mainpaper">
+        <div style="background-color: #f5f5f0; margin-left: 10px;padding-left: 5px; height: 50px;font-size: 20px;"><?php
         $nameOfStudent = mysqli_fetch_array($result1);
-        echo $nameOfStudent['firstname'] . ' ' . $nameOfStudent['middlename'] . ' ' . $nameOfStudent['surname'];
+        echo 'Jina la Mwanafunzi : ' .$nameOfStudent['firstname'] . ' ' . $nameOfStudent['middlename'] . ' ' . $nameOfStudent['surname'].'<br/>';
+        echo 'Kidato cha : '.$nameOfStudent['streamName']. ' |  '.$nameOfStudent['muhula'].', '.$nameOfStudent['examYear'];
         ?></div>
     <table class="displayList" border="1">
         <?php $sum = 0; ?>
         <tr>
-            <th>Subject Name</th>
-            <th>Score</th>
-            <th>Grade</th>
+            <th>Somo</th>
+            <th>Mtihani <br/> Machi</th>
+            <th>Mtihani <br/>Juni</th>
+            <th>Wastani</th>
+            <th>Daraja</th>
+            <th>Maoni ya <br/> Mwalimu wa Somo</th>
+            <th>Sahihi ya <br/> Mwalimu wa Somo</th>
         </tr>
         <?php while ($data = mysqli_fetch_array($result)) { ?>
             <tr>
@@ -35,6 +41,10 @@ $result1 = mysqli_query($link, $query1);
                     else
                         echo '<b>B</b>';
                     ?></td>
+                <td>00</td>
+                <td>01</td>
+                <td>Mwalimu</td>
+                <td>Mwalimu</td>
                 <?php $sum = $sum + $data['marks'] ?>
             </tr>
             <?php // print_r($data); ?>
@@ -57,7 +67,6 @@ $result1 = mysqli_query($link, $query1);
         $result4 = mysqli_query($link, $query6);
         $data3 = mysqli_fetch_array($result4);
         //echo $data2['pos'] . " " . $data2['studId'] . " " . $data2['total'] ." " .$data2['pos'] ."<br/>";
-        
     }
     ?>
     <div style="margin-left: 10px; padding-left: 5px;">  
@@ -73,7 +82,7 @@ $result1 = mysqli_query($link, $query1);
                 <td> <?php echo "The average marks  $sum"; ?></td>
             </tr>
             <tr>
-                <td> <?php echo "The total marks is $sum"; ?></td>
+                <td> <?php $html = "The total marks is $sum"; ?></td>
             </tr>
         </table>
 
@@ -83,5 +92,7 @@ $result1 = mysqli_query($link, $query1);
     mysqli_query($link, $dropQuery);
     mysqli_close($link);
     ?>
+    </div>
+    
 </html>
 
