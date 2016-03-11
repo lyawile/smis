@@ -4,7 +4,7 @@ require_once './config/dbcon.php';
 $examId = $_GET['examId'];
 $examYear = $_GET['examYear'];
 $streamId = $_GET['streamId'];
-$FetchStudentQuery = "select distinct st.`regNumber` 'registration', st.firstname 'firstname', st.surname 'surname', st.id 'stdId', sc.`examId` 'examId' from student st, score sc where st.id = sc.`studId` and sc.`examId` = $examId and sc.`streamId` = $streamId and sc.`examYear` = $examYear;";
+$FetchStudentQuery = "select distinct st.`regNumber` 'registration', st.firstname 'firstname', st.surname 'surname', st.id 'stdId' from student st, score sc where st.id = sc.`studId` and  sc.`streamId` = $streamId and sc.`examYear` = $examYear;";
 $result = mysqli_query($link, $FetchStudentQuery);
 ?>
 <table class="results">

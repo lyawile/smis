@@ -3,7 +3,7 @@ require './config/dbcon.php';
 include_once './config/login.php';
 $query = "select id,`streamName` from stream;";
 $result1 = mysqli_query($link, $query);
-$query = "select id,`name` from examterm;";
+$query = "select id,`muhula` from examterm;";
 $result2 = mysqli_query($link, $query);
 $query3 = "select firstname,surname,sc.marks,str.`streamName`,sb.`subjectName` "
         . "from student std join score sc on std.id = sc.`studId` join stream str on str.id = sc.`streamId` join subject sb on sb.`subjectID` = sc.`subjectID` join examterm ext on ext.id = sc.`examId` "
@@ -93,7 +93,7 @@ if (isset($_POST['subject'])) {
                 <span style="">Exam Period</span>
                 <select style="" id="examId" name="examPeriod">
                     <?php while ($data = mysqli_fetch_array($result2)) { ?>
-                        <option value="<?php echo $data['id']; ?>"><?php echo $data['name']; ?></option>';
+                        <option value="<?php echo $data['id']; ?>"><?php echo $data['muhula']; ?></option>';
                     <?php } ?>
                 </select>
                 <input type="submit"  value="submit" id="send" >
